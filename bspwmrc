@@ -2,11 +2,13 @@
 
 #autostart
 pgrep -x sxhkd > /dev/null || sxhkd &
-$HOME/.config/polybar/launch.sh
+~/.fehbg &
+light-locker --lock-on-suspend --lock-on-lid &
+#polybar -c /home/widward/.config/polybar/config
 
 #monitors
-bspc monitor DP-4 -d 1 2 3 4 5
-bspc monitor HDMI-0 -d 6 7 8 9 0
+bspc monitor eDP-1 -d 1 2 3 4 5
+#bspc monitor HDMI-0 -d 6 7 8 9 0
 
 bspc config border_width         3
 bspc config window_gap          10
@@ -17,5 +19,8 @@ bspc config gapless_monocle      true
 
 #global settings
 bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
 
 bspc config focused_border_color "#00e5a8"
+
+polybar -c /home/widward/.config/polybar/config

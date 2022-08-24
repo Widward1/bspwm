@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + {_,shift + }Return
-    st	
+    alacritty	
 
 # program launcher
 super + p
@@ -124,7 +124,22 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + {_,shift + }c
-    qutebrowser
+    firefox
 
 super + {_,shift + }d
     discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy
+
+XF86AudioLowerVolume
+      pactl set-sink-volume 0 -5%
+
+XF86AudioRaiseVolume
+      pactl set-sink-volume 0 +5%
+
+XF86AudioMute
+      pactl set-sink-mute 0 toggle
+
+XF86MonBrightnessDown
+      xbacklight -dec 5
+
+XF86MonBrightnessUp
+      xbacklight -inc 5
